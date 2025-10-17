@@ -62,4 +62,16 @@ public class Rectangulo extends Figura {
             }
         }
     }
+        // Determina si un punto está dentro del rectángulo (incluye borde)
+    public boolean contienePunto(double x, double y) {
+        double minX = Math.min(x1, x2), maxX = Math.max(x1, x2);
+        double minY = Math.min(y1, y2), maxY = Math.max(y1, y2);
+        return (x >= minX && x <= maxX) && (y >= minY && y <= maxY);
+    }
+
+    //acepta un objeto Punto
+    public boolean contienePunto(Punto p) {
+        return contienePunto(p.getX(), p.getY());
+    }
+
 }
