@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author LENOVO
+ * @author Vero
  */
 public class Taller2Punto2A {
 
