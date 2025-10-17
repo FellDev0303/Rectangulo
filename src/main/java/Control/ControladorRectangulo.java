@@ -26,4 +26,7 @@ public class ControladorRectangulo {
     public Rectangulo getRectangulo() {
         return rect;
     }
+    public boolean existeRectangulo() {
+        return rect != null;
+    }
 }
