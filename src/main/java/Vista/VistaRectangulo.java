@@ -148,6 +148,16 @@ public class VistaRectangulo {
                 JOptionPane.showMessageDialog(null, "Opción inválida.");
         }
     }
+    
+    private void mostrarRect() {
+        Rectangulo r = ctrl.getRectangulo();
+        if (r == null) {
+            JOptionPane.showMessageDialog(null, "No hay rectángulo creado.");
+        } else {
+            JOptionPane.showMessageDialog(null, r.toString());
+        }
+
+    }
 
 
 }
