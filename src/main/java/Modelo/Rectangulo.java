@@ -85,6 +85,25 @@ public class Rectangulo extends Figura {
         this.y1 += dy;
         this.y2 += dy;
     }
+    
+    //si se proporciona dx y dy, impone que solo uno sea distinto de 0
+    @Override
+    public void mover(double dx, double dy) {
+        if (Math.abs(dx) > 0 && Math.abs(dy) > 0) {
+            throw new IllegalArgumentException("Solo se permite mover en un sentido a la vez (horizontal o vertical).");
+        }
+        if (Math.abs(dx) > 0) {
+            moverHorizontal(dx);
+        }
+        if (Math.abs(dy) > 0) {
+            moverVertical(dy);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Rectángulo: " + super.toString() + " | Ancho=" + ancho() + " | Alto=" + alto() + " | Área=" + calcularArea();
+    }
 
 
 }
