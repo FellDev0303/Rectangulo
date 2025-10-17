@@ -90,5 +90,33 @@ public class VistaRectangulo {
         double area = ctrl.calcularArea();
         JOptionPane.showMessageDialog(null, "Área del rectángulo: " + area);
     }
+    
+    private void cambiarEscala() {
+        String modo = JOptionPane.showInputDialog("Seleccione modo de escala:\n1 = uniforme\n2 = escala XY\n3 = modo (uniforme/horizontal/vertical)");
+        if (modo == null) {
+            return;
+        }
+        switch (modo) {
+            case "1" -> {
+                double f = Double.parseDouble(JOptionPane.showInputDialog("Factor uniforme:"));
+                ctrl.cambiarEscalaUniforme(f);
+                JOptionPane.showMessageDialog(null, "Escala aplicada. Nuevo rectángulo: " + ctrl.getRectangulo());
+            }
+            case "2" -> {
+                double fx = Double.parseDouble(JOptionPane.showInputDialog("Factor X:"));
+                double fy = Double.parseDouble(JOptionPane.showInputDialog("Factor Y:"));
+                ctrl.cambiarEscalaXY(fx, fy);
+                JOptionPane.showMessageDialog(null, "Escala aplicada. Nuevo rectángulo: " + ctrl.getRectangulo());
+            }
+            case "3" -> {
+                String tipo = JOptionPane.showInputDialog("Ingrese tipo (uniforme / horizontal / vertical):");
+                double f = Double.parseDouble(JOptionPane.showInputDialog("Factor:"));
+                ctrl.cambiarEscalaModo(tipo, f);
+                JOptionPane.showMessageDialog(null, "Escala aplicada. Nuevo rectángulo: " + ctrl.getRectangulo());
+            }
+            default ->
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
+        }
+    }
 
 }
