@@ -85,5 +85,10 @@ public class VistaRectangulo {
         ctrl.crearRectangulo(x1, y1, x2, y2);
         JOptionPane.showMessageDialog(null, "Rectángulo creado: " + ctrl.getRectangulo());
     }
+    
+    private void calcularArea() {
+        double area = ctrl.calcularArea();
+        JOptionPane.showMessageDialog(null, "Área del rectángulo: " + area);
+    }
 
 }
