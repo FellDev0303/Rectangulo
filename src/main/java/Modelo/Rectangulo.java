@@ -43,4 +43,23 @@ public class Rectangulo extends Figura {
         this.x2 = x1 + dx;
         this.y2 = y1 + dy;
     }
+        // modo: "uniforme", "horizontal", "vertical"
+    public void cambiarEscala(String modo, double factor) {
+        // estructura anidada
+        if (modo != null) {
+            if (modo.equalsIgnoreCase("uniforme")) {
+                cambiarEscala(factor);
+            } else {
+                if (modo.equalsIgnoreCase("horizontal")) {
+                    cambiarEscala(factor, 1.0);
+                } else {
+                    if (modo.equalsIgnoreCase("vertical")) {
+                        cambiarEscala(1.0, factor);
+                    } else {
+                        // modo desconocido: no cambia
+                    }
+                }
+            }
+        }
+    }
 }
