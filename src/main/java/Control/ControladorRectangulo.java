@@ -60,5 +60,19 @@ public class ControladorRectangulo {
         validarRect();
         return rect.contienePunto(p);
     }
+    
+    public void moverHorizontal(double dx) {
+        validarRect();
+        rect.moverHorizontal(dx);
+    }
 
+    public void moverVertical(double dy) {
+        validarRect();
+        rect.moverVertical(dy);
+    }
+
+    public void mover(double dx, double dy) {
+        validarRect();
+        rect.mover(dx, dy);
+    }
 }
