@@ -60,7 +60,7 @@ public class VistaRectangulo {
                         moverRectangulo();
                     case 6 ->
                         mostrarRect();
-                    case 0 ->{
+                    case 0 -> {
                         JOptionPane.showMessageDialog(null, "Saliendo...");
                         System.exit(0);
                     }
@@ -72,7 +72,7 @@ public class VistaRectangulo {
             }
         } while (true);
     }
-    
+
     private void crearRectangulo() {
         String sx1 = JOptionPane.showInputDialog("Ingrese x1 (punto fijo):");
         String sy1 = JOptionPane.showInputDialog("Ingrese y1 (punto fijo):");
@@ -85,12 +85,12 @@ public class VistaRectangulo {
         ctrl.crearRectangulo(x1, y1, x2, y2);
         JOptionPane.showMessageDialog(null, "Rectángulo creado: " + ctrl.getRectangulo());
     }
-    
+
     private void calcularArea() {
         double area = ctrl.calcularArea();
         JOptionPane.showMessageDialog(null, "Área del rectángulo: " + area);
     }
-    
+
     private void cambiarEscala() {
         String modo = JOptionPane.showInputDialog("Seleccione modo de escala:\n1 = uniforme\n2 = escala XY\n3 = modo (uniforme/horizontal/vertical)");
         if (modo == null) {
@@ -117,6 +117,15 @@ public class VistaRectangulo {
             default ->
                 JOptionPane.showMessageDialog(null, "Opción inválida.");
         }
+    }
+
+    private void comprobarPunto() {
+        String sx = JOptionPane.showInputDialog("Ingrese X punto:");
+        String sy = JOptionPane.showInputDialog("Ingrese Y punto:");
+        double x = Double.parseDouble(sx);
+        double y = Double.parseDouble(sy);
+        boolean dentro = ctrl.contienePunto(x, y);
+        JOptionPane.showMessageDialog(null, dentro ? "El punto está dentro del rectángulo." : "El punto está fuera del rectángulo.");
     }
 
 }
