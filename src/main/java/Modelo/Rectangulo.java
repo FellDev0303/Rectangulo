@@ -73,5 +73,18 @@ public class Rectangulo extends Figura {
     public boolean contienePunto(Punto p) {
         return contienePunto(p.getX(), p.getY());
     }
+    
+    // Mover horizontalmente (solo dx)
+    public void moverHorizontal(double dx) {
+        this.x1 += dx;
+        this.x2 += dx;
+    }
+
+    // Mover verticalmente (solo dy)
+    public void moverVertical(double dy) {
+        this.y1 += dy;
+        this.y2 += dy;
+    }
+
 
 }
