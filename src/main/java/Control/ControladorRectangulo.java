@@ -50,4 +50,15 @@ public class ControladorRectangulo {
         validarRect();
         rect.cambiarEscala(modo, factor);
     }
+    
+    public boolean contienePunto(double x, double y) {
+        validarRect();
+        return rect.contienePunto(x, y);
+    }
+
+    public boolean contienePunto(Punto p) {
+        validarRect();
+        return rect.contienePunto(p);
+    }
+
 }
