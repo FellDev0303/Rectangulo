@@ -23,6 +23,9 @@ public class Rectangulo extends Figura {
     public Rectangulo(double x1, double y1, double ancho, double alto, boolean desdeTamanio) {
         super(x1, y1, x1 + ancho, y1 + alto);
     }
-
+     @Override
+    public double calcularArea() {
+        return ancho() * alto();
+    }
    
 }
