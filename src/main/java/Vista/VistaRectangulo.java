@@ -72,5 +72,18 @@ public class VistaRectangulo {
             }
         } while (true);
     }
+    
+    private void crearRectangulo() {
+        String sx1 = JOptionPane.showInputDialog("Ingrese x1 (punto fijo):");
+        String sy1 = JOptionPane.showInputDialog("Ingrese y1 (punto fijo):");
+        String sx2 = JOptionPane.showInputDialog("Ingrese x2 (punto variable):");
+        String sy2 = JOptionPane.showInputDialog("Ingrese y2 (punto variable):");
+        double x1 = Double.parseDouble(sx1);
+        double y1 = Double.parseDouble(sy1);
+        double x2 = Double.parseDouble(sx2);
+        double y2 = Double.parseDouble(sy2);
+        ctrl.crearRectangulo(x1, y1, x2, y2);
+        JOptionPane.showMessageDialog(null, "Rectángulo creado: " + ctrl.getRectangulo());
+    }
 
 }
