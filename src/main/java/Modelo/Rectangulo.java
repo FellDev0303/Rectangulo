@@ -27,5 +27,20 @@ public class Rectangulo extends Figura {
     public double calcularArea() {
         return ancho() * alto();
     }
-   
+    
+    // Cambiar escala manteniendo (x1,y1) fijo
+    public void cambiarEscala(double factor) {
+        double dx = (x2 - x1) * factor;
+        double dy = (y2 - y1) * factor;
+        this.x2 = x1 + dx;
+        this.y2 = y1 + dy;
+    }
+
+    //cambiar escala con factores independientes
+    public void cambiarEscala(double factorX, double factorY) {
+        double dx = (x2 - x1) * factorX;
+        double dy = (y2 - y1) * factorY;
+        this.x2 = x1 + dx;
+        this.y2 = y1 + dy;
+    }
 }
