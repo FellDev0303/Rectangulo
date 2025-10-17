@@ -29,4 +29,14 @@ public class ControladorRectangulo {
     public boolean existeRectangulo() {
         return rect != null;
     }
+    private void validarRect() {
+        if (rect == null) {
+            throw new IllegalStateException("No hay rectángulo creado.");
+        }
+    }
+    public double calcularArea() {
+        validarRect();
+        return rect.calcularArea();
+    }   
+    
 }
