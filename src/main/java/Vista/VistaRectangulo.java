@@ -127,5 +127,27 @@ public class VistaRectangulo {
         boolean dentro = ctrl.contienePunto(x, y);
         JOptionPane.showMessageDialog(null, dentro ? "El punto está dentro del rectángulo." : "El punto está fuera del rectángulo.");
     }
+    
+    private void moverRectangulo() {
+        String tipo = JOptionPane.showInputDialog("Mover:\n1 = horizontal\n2 = vertical");
+        if (tipo == null) {
+            return;
+        }
+        switch (tipo) {
+            case "1" -> {
+                double dx = Double.parseDouble(JOptionPane.showInputDialog("Ingrese desplazamiento horizontal (negativo = izquierda):"));
+                ctrl.moverHorizontal(dx);
+                JOptionPane.showMessageDialog(null, "Rectángulo movido. Nuevo: " + ctrl.getRectangulo());
+            }
+            case "2" -> {
+                double dy = Double.parseDouble(JOptionPane.showInputDialog("Ingrese desplazamiento vertical (negativo = abajo):"));
+                ctrl.moverVertical(dy);
+                JOptionPane.showMessageDialog(null, "Rectángulo movido. Nuevo: " + ctrl.getRectangulo());
+            }
+            default ->
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
+        }
+    }
+
 
 }
