@@ -38,5 +38,16 @@ public class ControladorRectangulo {
         validarRect();
         return rect.calcularArea();
     }   
-    
+    public void cambiarEscalaUniforme(double factor) {
+        validarRect();
+        rect.cambiarEscala(factor);
+    }    public void cambiarEscalaXY(double fx, double fy) {
+        validarRect();
+        rect.cambiarEscala(fx, fy);
+    }
+
+    public void cambiarEscalaModo(String modo, double factor) {
+        validarRect();
+        rect.cambiarEscala(modo, factor);
+    }
 }
