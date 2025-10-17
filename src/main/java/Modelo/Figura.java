@@ -43,6 +43,28 @@ public abstract class Figura {
     public void setY2(double y2) {
         this.y2 = y2;
     }
+    
+    public double ancho() {
+        return Math.abs(x2 - x1);
+    }
+
+    public double alto() {
+        return Math.abs(y2 - y1);
+    }
+
+    public abstract double calcularArea();
+
+    public void mover(double dx, double dy) {
+        this.x1 += dx;
+        this.x2 += dx;
+        this.y1 += dy;
+        this.y2 += dy;
+    }
+
+    @Override
+    public String toString() {
+        return "Vértice1=(" + x1 + "," + y1 + "), Vértice2=(" + x2 + "," + y2 + ")";
+    }
 
 
 }
